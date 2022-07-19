@@ -9,15 +9,14 @@ spring:
 service:
   b:
     url: http://ms-service-b/service/b
-
-
-  endpoints:
-    web:
-      exposure:
-        include: health
-  endpoints:
-    health:
-      show-details: always
+    
+endpoints:
+  web:
+    exposure:
+      include: health
+  health:
+    show-details: always
+  
 
 resilience4j:
   circuitbreaker:
