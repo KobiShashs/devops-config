@@ -10,17 +10,22 @@ service:
   b:
     url: http://ms-service-b/service/b
 
-
-resilience4j:
-  circuitbreaker:
-    instances:
-      menu-service:
+resilience4j.circuitbreaker:
+configs:
+    default:
         registerHealthIndicator: true
-        eventConsumerBufferSize: 10
-        automaticTransitionFromOpenToHalfOpenEnabled: true
-        failureRateThreshold: 50
-        minimumNumberOfCalls: 5
-        permittedNumberOfCallsInHalfOpenState: 1
-        slidingWindowSize: 10
-        waitDurationInOpenState: 2s
-        slidingWindowType: COUNT_BASED
+        # Failure rate threshold percentage
+        failureRateThreshold: 10
+        # Minimum number of call attempts before rate threshold percentage is checked.
+        ringBufferSizeInClosedState: 10
+        # How long to wait until switching to half open.
+        waitDurationInOpenState: 3s
+        # Number of successful requests before moving back to closed from half open.
+        ringBufferSizeInHalfOpenState: 5
+        # Exceptions that do not count towards opening the circuit.
+        ignoreExceptions:
+            # Ignore 4xx exceptions.
+            - org.springframework.web.client.HttpClientErrorException
+        instances:
+            aInformation:
+                baseConfig: default
