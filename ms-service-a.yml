@@ -10,7 +10,7 @@ service:
   b:
     url: http://ms-service-b/service/b
 
-mc
+
   endpoints:
     web:
       exposure:
