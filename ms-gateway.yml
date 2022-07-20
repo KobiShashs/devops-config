@@ -4,7 +4,7 @@ spring:
   cloud:
     consul:
       discovery:
-        instanceId: ms-dashoboard
+        instanceId: ms-dashboard
         health-check-interval: 5s
 
 management:
