@@ -16,7 +16,7 @@ management:
   endpoint:
     metrics:
       enabled: true
-     prometheus:
+    prometheus:
       enabled: true
     pro
     health:
