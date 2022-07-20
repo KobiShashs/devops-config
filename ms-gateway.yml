@@ -1,7 +1,6 @@
 server:
   port: '8080'
 
-
 management:
   health:
     circuitbreakers:
@@ -11,7 +10,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: info, health, prometheus
+        include: '*'
       path-mapping:
         prometheus: metrics
   endpoint:
