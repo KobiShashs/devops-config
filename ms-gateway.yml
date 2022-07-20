@@ -10,7 +10,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: prometheus
+        include: '*'
       path-mapping:
         prometheus: metrics
   endpoint:
