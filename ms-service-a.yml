@@ -36,6 +36,13 @@ resilience4j:
             permittedNumberOfCallsInHalfOpenState: 3
             slidingWindowSize: 10
             slidingWindowType: COUNT_BASED
+            recordExceptions:
+              - org.springframework.web.client.HttpServerErrorException
+              - java.io.IOException
+              - java.util.concurrent.TimeOutException
+              - org.springframework.web.client.ResourceAccessException
+            ignoreExceptions:
+              - com.jb.demo.exceptions.CustomException
   retry:
     instances:
       aInformation:
