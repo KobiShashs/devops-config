@@ -10,16 +10,16 @@ management:
   endpoints:
     web:
       exposure:
-        include: prometheus,health
+        include: '*'
       path-mapping:
         prometheus: metrics
-  endpoint:
-    metrics:
-      enabled: true
-    prometheus:
-      enabled: true
-    health:
-      show-details: always
+  # endpoint:
+  #   metrics:
+  #     enabled: true
+  #   prometheus:
+  #     enabled: true
+  #   health:
+  #     show-details: always
   
 spring:
   cloud:
