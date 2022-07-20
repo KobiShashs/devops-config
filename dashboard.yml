@@ -2,7 +2,6 @@ server:
   port: '8811'
 
 
-
 management:
   health:
     circuitbreakers:
