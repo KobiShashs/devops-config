@@ -1,5 +1,11 @@
 server:
   port: '8080'
+spring:
+  cloud:
+    consul:
+      discovery:
+        instanceId: ms-dashoboard
+        health-check-interval: 5s
 
 management:
   health:
