@@ -25,7 +25,7 @@ spring:
         - Path=/srva/**
         filters:
         - RewritePath=/srva/(?<segment>.*), /$\{segment}
-        - name: Hystrix
+        - name: CircuitBreaker
           args:
             name: monitor-srvA
             fallbackUri: forward:/fallback/serviceA
@@ -35,7 +35,7 @@ spring:
         - Path=/srvb/**
         filters:
         - RewritePath=/srvb/(?<segment>.*), /$\{segment}
-        - name: Hystrix
+        - name: CircuitBreaker
           args:
             name: monitor-srvB
             fallbackUri: forward:/fallback/serviceB
