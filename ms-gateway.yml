@@ -3,6 +3,11 @@ server:
 
 
 management:
+  endpoint:
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
   metrics:
     export:
       prometheus:
@@ -12,7 +17,7 @@ management:
       exposure:
         include: prometheus,health
       path-mapping:
-        prometheus: metrics
+        prometheus: metrics,info,health,prometheus
 
 
 # management:
