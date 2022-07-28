@@ -3,6 +3,9 @@ server:
 
 
 management:
+  health:
+    circuitbreakers:
+      enabled: true
   endpoint:
     health:
       enabled: true
