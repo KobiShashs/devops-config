@@ -1,5 +1,9 @@
 server:
   port: '8001'
+
+
+
+
 spring:
   cloud:
     consul:
@@ -17,7 +21,9 @@ management:
   endpoints:
     web:
       exposure:
-        include: health
+        include: '*'
+      path-mapping:
+        prometheus: metrics
   endpoint:
     health:
       show-details: always
