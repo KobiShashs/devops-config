@@ -14,11 +14,15 @@ management:
         include: '*'
       path-mapping:
         prometheus: metrics
-  # endpoint:
-  #   metrics:
+  endpoint:
+    prometheus:
+      enabled: true
+  metrics:
+    export:
+      prometheus:
+        enabled: true
   #     enabled: true
-  #   prometheus:
-  #     enabled: true
+
   #   health:
   #     show-details: always
   
